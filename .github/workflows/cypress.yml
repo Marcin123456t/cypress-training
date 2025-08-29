@@ -9,30 +9,55 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Run Cypress tests
-        run: npx cypress run --reporter mochawesome
+      - name: Cache Cypress binary
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/Cypress
+          key: cypress-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            cypress-${{ runner.os }}-
 
-      - name: Merge mochawesome reports
-        run: npx mochawesome-merge cypress/reports/*.json -o cypress/reports/merged.json
+      - name: Run Cypress tests (headless)
+        run: npm run cypress:run
+
+      - name: Merge Mochawesome JSON
+        run: npx mochawesome-merge cypress/reports/**/*.json -o cypress/reports/merged.json
 
       - name: Generate HTML report
         run: npx marge cypress/reports/merged.json -f index -o cypress/reports/html
 
-      - name: Upload report artifact
-        uses: actions/upload-artifact@v3
+      - name: Upload HTML report
+        uses: actions/upload-artifact@v4
         with:
           name: mochawesome-html
           path: cypress/reports/html
 
+      - name: Upload screenshots (if any)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+          if-no-files-found: ignore
+
+      - name: Upload videos (if any)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-videos
+          path: cypress/videos
+          if-no-files-found: ignore
