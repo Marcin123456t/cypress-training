@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-29T07:38:47.774Z",
+    "end": "2025-08-29T07:38:49.951Z",
+    "duration": 2177,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6545ca6c-5501-4413-969b-bda8076b4b06",
+      "title": "",
+      "fullFile": "cypress/e2e/stability-network-wait.cy.js",
+      "file": "cypress/e2e/stability-network-wait.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "409cad50-2850-458f-9f17-7deea1c8a563",
+          "title": "Stability: waiting for network",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "uses cy.intercept and cy.wait for a GET request",
+              "fullTitle": "Stability: waiting for network uses cy.intercept and cy.wait for a GET request",
+              "timedOut": null,
+              "duration": 824,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://example.cypress.io/commands/network-requests');\ncy.intercept('GET', '**/comments/*').as('getComment');\ncy.contains('Get Comment').click();\ncy.wait('@getComment').its('response.statusCode').should('eq', 200);\ncy.get('.network-comment').should('contain.text', 'laudantium');",
+              "err": {},
+              "uuid": "f38122e1-2f2e-43ec-b4e0-d0f100787599",
+              "parentUUID": "409cad50-2850-458f-9f17-7deea1c8a563",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "uses cy.intercept and cy.wait for a POST request",
+              "fullTitle": "Stability: waiting for network uses cy.intercept and cy.wait for a POST request",
+              "timedOut": null,
+              "duration": 317,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://example.cypress.io/commands/network-requests');\ncy.intercept('POST', '**/comments').as('postComment');\ncy.contains('Post Comment').click();\ncy.wait('@postComment').its('response.statusCode').should('eq', 201);\ncy.get('.network-post-comment').should('contain.text', 'POST successful!');",
+              "err": {},
+              "uuid": "3df65d82-3173-48ad-92e0-b5785e4f9040",
+              "parentUUID": "409cad50-2850-458f-9f17-7deea1c8a563",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f38122e1-2f2e-43ec-b4e0-d0f100787599",
+            "3df65d82-3173-48ad-92e0-b5785e4f9040"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1141,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

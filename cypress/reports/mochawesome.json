@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-29T06:44:11.474Z",
+    "end": "2025-08-29T06:44:14.745Z",
+    "duration": 3271,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c4a42828-48f1-497b-ace8-9860e3dbc12d",
+      "title": "",
+      "fullFile": "cypress/e2e/actions-page.cy.js",
+      "file": "cypress/e2e/actions-page.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "237cc496-8f5f-4ffc-b899-42280a4c4ecf",
+          "title": "Page Object example - Actions page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "fill form using Page Object",
+              "fullTitle": "Page Object example - Actions page fill form using Page Object",
+              "timedOut": null,
+              "duration": 1227,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "actionsPage.fillCredentials(this.userData.email, this.randomPassword);\nexpect(this.randomPassword.length).to.be.greaterThan(7);\nactionsPage.submitForm();\nactionsPage.checkSubmitButton();",
+              "err": {},
+              "uuid": "3ed954df-19be-495b-bc0c-f1c57a837dc0",
+              "parentUUID": "237cc496-8f5f-4ffc-b899-42280a4c4ecf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should detect Submit button is enabled by default",
+              "fullTitle": "Page Object example - Actions page should detect Submit button is enabled by default",
+              "timedOut": null,
+              "duration": 266,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "actionsPage.isSubmitDisabled().then(disabled => {\n  expect(disabled).to.be.false;\n});",
+              "err": {},
+              "uuid": "a129a30f-5b86-42a4-b506-e7e60bb99865",
+              "parentUUID": "237cc496-8f5f-4ffc-b899-42280a4c4ecf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should detect Submit button is disabled after simulation",
+              "fullTitle": "Page Object example - Actions page should detect Submit button is disabled after simulation",
+              "timedOut": null,
+              "duration": 98,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "actionsPage.disabledSubmit();\nactionsPage.isSubmitDisabled().then(disabled => {\n  expect(disabled).to.be.true;\n});",
+              "err": {},
+              "uuid": "75ab2c94-407b-4977-aa99-157fc04a2837",
+              "parentUUID": "237cc496-8f5f-4ffc-b899-42280a4c4ecf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should enable Submit button after disabling it",
+              "fullTitle": "Page Object example - Actions page should enable Submit button after disabling it",
+              "timedOut": null,
+              "duration": 104,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "actionsPage.disabledSubmit();\nactionsPage.isSubmitDisabled().then(disabled => {\n  expect(disabled).to.be.true;\n});\nactionsPage.enableSubmit();\nactionsPage.isSubmitDisabled().then(disabled => {\n  expect(disabled).to.be.false;\n});",
+              "err": {},
+              "uuid": "5ae42857-b891-4449-bb9b-9a81de1c9b31",
+              "parentUUID": "237cc496-8f5f-4ffc-b899-42280a4c4ecf",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3ed954df-19be-495b-bc0c-f1c57a837dc0",
+            "a129a30f-5b86-42a4-b506-e7e60bb99865",
+            "75ab2c94-407b-4977-aa99-157fc04a2837",
+            "5ae42857-b891-4449-bb9b-9a81de1c9b31"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1695,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

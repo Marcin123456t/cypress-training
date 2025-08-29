@@ -1,0 +1,10 @@
+# Node / Cypress
+node_modules/
+cypress/screenshots/
+cypress/videos/
+cypress/reports/
+
+# System/IDE
+.DS_Store
+.idea/
+.vscode/

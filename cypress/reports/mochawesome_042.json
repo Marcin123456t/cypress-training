@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-29T07:39:12.974Z",
+    "end": "2025-08-29T07:39:14.496Z",
+    "duration": 1522,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "080335d7-843d-48d2-b4c2-7cc86b9b6aa2",
+      "title": "",
+      "fullFile": "cypress/e2e/then_custom_assertions.cy.js",
+      "file": "cypress/e2e/then_custom_assertions.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ac8c6b9d-c957-491e-af42-f55368568094",
+          "title": "Using .then() with custom asertion",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "types into input and checks value with expect",
+              "fullTitle": "Using .then() with custom asertion types into input and checks value with expect",
+              "timedOut": null,
+              "duration": 483,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://example.cypress.io/commands/actions');\ncy.get('#email1').type('test@email.com').then($input => {\n  const val = $input.val();\n  expect(val).to.contain('@');\n  expect(val).to.match(/\\.com$/);\n});",
+              "err": {},
+              "uuid": "e5289630-995d-49dd-956d-a8b301edd058",
+              "parentUUID": "ac8c6b9d-c957-491e-af42-f55368568094",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e5289630-995d-49dd-956d-a8b301edd058"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 483,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

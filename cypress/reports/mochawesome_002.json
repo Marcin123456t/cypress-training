@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-29T07:35:42.080Z",
+    "end": "2025-08-29T07:35:44.876Z",
+    "duration": 2796,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "edad501d-a390-4a2c-b766-f2d1f10e6c21",
+      "title": "",
+      "fullFile": "cypress/e2e/alias-intercept.cy.js",
+      "file": "cypress/e2e/alias-intercept.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6ad35a52-b84e-45be-8c46-dccec98e8707",
+          "title": "Alias example - intercept request",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "uses alias for GET request and validates response + UI",
+              "fullTitle": "Alias example - intercept request uses alias for GET request and validates response + UI",
+              "timedOut": null,
+              "duration": 1686,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://example.cypress.io/commands/network-requests');\ncy.get('h1', {\n  timeout: 10000\n}).should('contain.text', 'Network Requests');\ncy.intercept('GET', '**/comments/*').as('getComment');\ncy.contains('Get Comment', {\n  timeout: 10000\n}).scrollIntoView().should('be.visible').click();\ncy.wait('@getComment', {\n  timeout: 10000\n}).its('response.statusCode').should('eq', 200);\ncy.get('.network-comment').should('not.be.empty');",
+              "err": {},
+              "uuid": "09a59dbd-a22d-401f-ac04-58266479e6b1",
+              "parentUUID": "6ad35a52-b84e-45be-8c46-dccec98e8707",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "09a59dbd-a22d-401f-ac04-58266479e6b1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1686,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

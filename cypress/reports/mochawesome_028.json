@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-29T07:38:32.831Z",
+    "end": "2025-08-29T07:38:34.421Z",
+    "duration": 1590,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "75ea00e9-a3e2-4ed3-807e-bf5139126799",
+      "title": "",
+      "fullFile": "cypress/e2e/network-post.cy.js",
+      "file": "cypress/e2e/network-post.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "853c539f-e363-433d-a6b2-e9b11f0058de",
+          "title": "Network requests - POST example",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "intercepts POST /comments and checks status + UI",
+              "fullTitle": "Network requests - POST example intercepts POST /comments and checks status + UI",
+              "timedOut": null,
+              "duration": 431,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 1) wejście na stronę\ncy.visit('https://example.cypress.io/commands/network-requests');\ncy.get('h1', {\n  timeout: 10000\n}).should('contain.text', 'Network Requests');\n// 2) intercept POST /comments\ncy.intercept({\n  method: 'POST',\n  url: /\\/comments$/\n}).as('postComment');\n// 3) klik w przycisk Post Comment\ncy.contains('Post Comment', {\n  timeout: 10000\n}).scrollIntoView().should('be.visible').click();\n// 4) czekamy na request i sprawdzamy status\ncy.wait('@postComment', {\n  timeout: 10000\n}).its('response.statusCode').should('eq', 201);\n// 5) UI potwierdzenie\ncy.get('.network-post-comment', {\n  timeout: 10000\n}).should('contain.text', 'POST successful!');",
+              "err": {},
+              "uuid": "5170d7d7-7465-4972-8158-d14361aa6d1a",
+              "parentUUID": "853c539f-e363-433d-a6b2-e9b11f0058de",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5170d7d7-7465-4972-8158-d14361aa6d1a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 431,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

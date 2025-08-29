@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-29T07:38:35.475Z",
+    "end": "2025-08-29T07:38:36.750Z",
+    "duration": 1275,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d3e931f7-9a6c-4bcc-91a1-1a609a994e69",
+      "title": "",
+      "fullFile": "cypress/e2e/network-stub-example.cy.js",
+      "file": "cypress/e2e/network-stub-example.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5e812a3a-fb73-49ec-a43e-6318fdea1e7e",
+          "title": "Network stubbing with cy.intercept",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "forces network error for POST and validates via alias + UI",
+              "fullTitle": "Network stubbing with cy.intercept forces network error for POST and validates via alias + UI",
+              "timedOut": null,
+              "duration": 263,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://example.cypress.io/commands/network-requests');\ncy.intercept('POST', '**/comments', {\n  forceNetworkError: true\n}).as('postStub');\ncy.contains('Post Comment').click();\ncy.wait('@postStub').its('error').should('exist');\ncy.get('.network-post-comment', {\n  timeout: 10000\n}).should($el => {\n  const text = $el.text().trim();\n  expect(text === '' || text === 'POST failed!').to.be.true;\n});",
+              "err": {},
+              "uuid": "b1558a3e-f634-43e1-a3ac-0afae82ff0a1",
+              "parentUUID": "5e812a3a-fb73-49ec-a43e-6318fdea1e7e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b1558a3e-f634-43e1-a3ac-0afae82ff0a1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 263,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

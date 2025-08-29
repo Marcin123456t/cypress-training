@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-29T07:38:27.127Z",
+    "end": "2025-08-29T07:38:29.030Z",
+    "duration": 1903,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3f946b0c-0dd2-4e6f-ace0-015f51e3375b",
+      "title": "",
+      "fullFile": "cypress/e2e/network-get.cy.js",
+      "file": "cypress/e2e/network-get.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4c060b10-6dce-4d7c-b6f3-e54bc817a19c",
+          "title": "Network requests - GET (diagnostic)",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "intercepts GET /comments/{id} and asserts status + DOM",
+              "fullTitle": "Network requests - GET (diagnostic) intercepts GET /comments/{id} and asserts status + DOM",
+              "timedOut": null,
+              "duration": 724,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://example.cypress.io/commands/network-requests');\n// 1) Upewnij się, że jesteś na właściwej stronie\ncy.get('h1', {\n  timeout: 10000\n}).should('contain.text', 'Network Requests');\n// 2) Intercept z REGEX-em (łapie np. .../comments/1, /comments/123)\ncy.intercept({\n  method: 'GET',\n  url: /\\/comments\\/\\d+$/\n}).as('getComment');\n// 3) Klik — najpierw przewiń i upewnij się, że widać\ncy.contains('Get Comment', {\n  timeout: 10000\n}).scrollIntoView().should('be.visible').click();\n// 4) Czekaj na request (dłuższy timeout na wszelki wypadek) i zaloguj szczegóły\ncy.wait('@getComment', {\n  timeout: 10000\n}).then(interception => {\n  cy.log('METHOD: ' + interception.request.method);\n  cy.log('URL: ' + interception.request.url);\n  cy.log('STATUS: ' + interception.response.statusCode);\n  expect(interception.response.statusCode).to.equal(200);\n});\n// 5) UI powinno mieć treść komentarza\ncy.get('.network-comment', {\n  timeout: 10000\n}).invoke('text').then(t => expect(t.trim()).to.not.equal(''));",
+              "err": {},
+              "uuid": "f5ddd88d-db2e-4a89-a9ba-49121c364209",
+              "parentUUID": "4c060b10-6dce-4d7c-b6f3-e54bc817a19c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f5ddd88d-db2e-4a89-a9ba-49121c364209"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 724,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

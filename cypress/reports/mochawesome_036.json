@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-29T07:38:53.565Z",
+    "end": "2025-08-29T07:38:55.138Z",
+    "duration": 1573,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "afcbf8aa-9842-4bb6-ac5d-24e07c42c911",
+      "title": "",
+      "fullFile": "cypress/e2e/test_chain.cy.js",
+      "file": "cypress/e2e/test_chain.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "227ef1b8-4182-4baa-8f9e-a8d3be868a66",
+          "title": "Chainde command example",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "types into input, check URL, and submit",
+              "fullTitle": "Chainde command example types into input, check URL, and submit",
+              "timedOut": null,
+              "duration": 545,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://example.cypress.io/commands/actions');\ncy.get('#couponCode1').type('1234567').should('have.value', '1234567');\ncy.url().should('include', '/actions');\ncy.contains('Submit').click();\ncy.get('#couponCode1').should('exist');\ncy.get('form.action-form').should('exist');\ncy.contains('Submit').should('be.visible');",
+              "err": {},
+              "uuid": "fc444d12-0f6f-46a0-b5ff-0944fa8a6715",
+              "parentUUID": "227ef1b8-4182-4baa-8f9e-a8d3be868a66",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fc444d12-0f6f-46a0-b5ff-0944fa8a6715"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 545,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

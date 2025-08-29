@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-29T07:38:42.782Z",
+    "end": "2025-08-29T07:38:44.161Z",
+    "duration": 1379,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2ca9c8ec-327f-4699-bd89-6d53faf031f6",
+      "title": "",
+      "fullFile": "cypress/e2e/radio-example.cy.js",
+      "file": "cypress/e2e/radio-example.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1a248d08-fff2-4afe-ae99-17c5f84ef03a",
+          "title": "Radiobutton",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check and uncheck radiobutton",
+              "fullTitle": "Radiobutton Check and uncheck radiobutton",
+              "timedOut": null,
+              "duration": 372,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://example.cypress.io/commands/actions');\ncy.get('#optionsRadios1').check().should('be.checked');\ncy.get('#optionsRadios2').should('not.be.checked');\ncy.get('#optionsRadios2').check().should('be.checked');\ncy.get('#optionsRadios1').should('not.be.checked');",
+              "err": {},
+              "uuid": "0d976e95-ca92-4a7f-9c0d-ab96a0419fd1",
+              "parentUUID": "1a248d08-fff2-4afe-ae99-17c5f84ef03a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0d976e95-ca92-4a7f-9c0d-ab96a0419fd1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 372,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

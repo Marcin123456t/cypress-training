@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-29T07:37:38.263Z",
+    "end": "2025-08-29T07:37:39.733Z",
+    "duration": 1470,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7f82fb55-4da5-4411-bd17-856b65aa642b",
+      "title": "",
+      "fullFile": "cypress/e2e/coupon-negative-example.cy.js",
+      "file": "cypress/e2e/coupon-negative-example.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4a4166ed-d982-4052-98b6-7e934a71c53f",
+          "title": "Negative coupon code flow",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Try to submit with too short coupon code",
+              "fullTitle": "Negative coupon code flow Try to submit with too short coupon code",
+              "timedOut": null,
+              "duration": 440,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://example.cypress.io/commands/actions');\ncy.get('#couponCode1').type('12').should('have.value', '12').invoke('val').should('have.length.lessThan', 5);\ncy.contains('Submit').click();\ncy.get('.action-form').should('exist').and('be.visible');",
+              "err": {},
+              "uuid": "16fde5e1-59f3-4e4c-9e2d-1eca95272ce0",
+              "parentUUID": "4a4166ed-d982-4052-98b6-7e934a71c53f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "16fde5e1-59f3-4e4c-9e2d-1eca95272ce0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 440,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
